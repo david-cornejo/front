@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regístrate - Healthy Passport</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="registro/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+              <img src="img/logo.png" alt="Healthy Passport Logo" class="logo mb-3">
+              <p>"Healthy Passport" es un innovador proyecto de ingeniería de software desarrollado por estudiantes de la ESCOM 
+                centrado en la creación de una plataforma web que mejore la gestión y comunicación en el ámbito médico-paciente.</p>
+            </div>
+            <div class="col-md-5 d-flex flex-column justify-content-center card registration-card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Regístrate</h2>
+                    <h3 class="card-title text-center mb-4">Vamos a crearte una cuenta</h3>
+                    <form id="registrationFormCuenta">                        
+                        <div class="form-group">
+                            <label for="correo">Correo:</label>
+                            <input type="email" class="form-control" id="correo" placeholder="ejemplo@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="password" class="form-control" id="contraseña" placeholder="Ingrese una contraseña" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="siguiente">Crear cuenta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="registro/js/main.js"></script>
+</body>
+</html>

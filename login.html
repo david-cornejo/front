@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Passport -</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="login/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-4">
+            <div class="text-center">
+                <img src="img/login.png" alt="Icono de Usuario" class="mb-4 user-icon"> <!-- Asegúrate de cambiar la ruta a tu imagen -->
+            </div>
+            <div class="card login-card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Inicia Sesión</h2>
+                        <form id="loginForm" onsubmit="event.preventDefault(); iniciarSesion();">
+                            <div class="form-group">
+                                <label for="nombreUsuario">Correo:</label>
+                                <input type="text" class="form-control" id="correo" placeholder="example@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contraseña">Contraseña:</label>
+                                <input type="password" class="form-control" id="contraseña" placeholder="Introduzca su contraseña" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="login/js/main.js"></script>
+</body>
+</html>

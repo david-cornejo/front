@@ -1,0 +1,84 @@
+body, html {
+  height: 100%;
+  background-color: #c8e9f7;
+  font-family: 'Times New Roman', sans-serif;
+}
+
+.logo {  
+  width: 200px; /* Adjust to the size of your actual logo */
+  margin-bottom: 30px;
+}
+
+.text-uppercase {
+  color: #00BCD4;
+}
+
+.card-title {
+  color: #06735F;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+.btn-primary {
+  background-color: #8FBFB6;
+  border-color: #06735F;  
+  width: 100%; 
+}
+
+.btn-outline-primary {
+  color: #06735F;
+  border-color: #06735F;
+}
+
+.btn-primary:hover {
+  background-color: #06735F;  
+  border-color: #06735F;
+}
+
+.btn-outline-primary:hover {
+  color: #FFFFFF;
+  background-color: #06735F;
+  border-color: #06735F;
+}
+
+.btn-lg.btn-block {
+  max-width: 250px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  color: #06735F;
+  margin-bottom: .5rem;
+}
+
+.form-control {
+  border-radius: 20px;
+  border: 1px solid #06735F;
+  margin-bottom: 1rem;
+}
+
+.container {
+  min-height: 100vh; 
+}
+
+.user-icon {
+  width: 150px; 
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos existentes... */
+
+.registration-card {
+  margin-top: 20px; /* Ajustar según sea necesario */
+  border: none;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+}
