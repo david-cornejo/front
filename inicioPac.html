@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Healthy Passport</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="inicioPac/CSS/style.css" rel="stylesheet">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 header">
+            <img src="img/logo.png" alt="Healthy Passport Logo" class="logo">
+            <h1>Bienvenido Paciente</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Citas médicas</a></li>
+                    <li><a href="#">Visualizar historial</a></li>
+                    <li><a href="#">Visualizar tratamiento</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Lista de citas médicas</h2>
+                    <!-- Aquí iría la lista dinámica de pacientes -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" id='calendar'>
+            <!-- Aquí iría el componente del calendario, puedes usar una librería como FullCalendar o cualquier otra -->
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/es.js'></script>
+<script src="inicioPac/JS/main.js"></script>
+</body>
+</html>
