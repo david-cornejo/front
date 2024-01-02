@@ -6,18 +6,16 @@ document.getElementById('login').addEventListener('click', function() {
     window.location.href = 'registro.html'; 
   });
   
-  //LOGIN
-
   function iniciarSesion() {
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-  
+
     var datosLogin = {
-      correo: correo, // Asegúrate de que las claves coincidan con lo que tu API espera
+      correo: correo,
       contraseña: contraseña
     };
-  
-    fetch('http://localhost:8090/api/login', { // La URL de tu API
+
+    fetch('http://localhost:8090/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -31,16 +29,21 @@ document.getElementById('login').addEventListener('click', function() {
       return response.json();
     })
     .then(function(data) {
-      // Si la API responde con un token, guárdalo y redirige, por ejemplo:
-      // localStorage.setItem('token', data.token);
-      // Reemplaza '/dashboard' con la URL a la que desees redirigir al usuario después del inicio de sesión
-      //window.location.href = '/dashboard';
-      alert('inicio exitoso');
+      if (data.tipoUsuario === 'doctor') {
+        window.location.href = 'inicioDoc.html'; // Cambia a la página correspondiente para doctores
+      } else if (data.tipoUsuario === 'paciente') {
+        window.location.href = 'inicioPac.html'; // Cambia a la página correspondiente para pacientes
+      } else {
+        alert('Tipo de usuario desconocido');
+      }
     })
     .catch(function(error) {
       console.error('Error al conectar con la API:', error);
       alert(error.message);
-      // Aquí podrías actualizar la interfaz de usuario para mostrar un mensaje de error
     });
-  }
+}
+  
+  // Asegúrate de que esta función esté conectada al botón de inicio de sesión en tu HTML
+  document.getElementById('botonLogin').addEventListener('click', iniciarSesion);
+  
   
