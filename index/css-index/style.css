@@ -52,6 +52,16 @@ body, html {
   border-color: #06735F;
 }
 
+.btn-primary:active {
+  background-color: #06735F !important;
+  border-color: #8FBFB6 !important;
+}
+
+.btn-outline-primary:active {
+  background-color: #06735F !important;
+  border-color: #8FBFB6 !important;
+}
+
 .btn-lg.btn-block {
   max-width: 250px;
   margin: auto;
