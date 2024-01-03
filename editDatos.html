@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editar Cuenta - Healthy Passport</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="editDatos/CSS/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 header">
+            <img src="img/logo.png" alt="Healthy Passport Logo" class="logo">
+            <h1>Datos del la cuenta</h1>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+            <div class="col-md-4 d-flex flex-column justify-content-center registration-card">
+                <div class="card-body">
+                    <form id="editAccountForm">
+                        <div class=" form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaDeNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fechaDeNacimiento" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="contrasena">Contraseña:</label>
+                            <input type="password" id="contrasena" class="form-control" disabled>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                              <button type="button" class="btn btn-secondary btn-lg btn-block" id="atras">Atrás</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" id="editBtn" class="btn btn-primary btn-lg btn-block">Editar Datos</button>
+                                <button type="button" id="saveBtn" class="btn btn-primary btn-lg btn-block d-none">Guardar Cambios</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="editDatos/JS/main.js"></script>
+</body>
+</html>

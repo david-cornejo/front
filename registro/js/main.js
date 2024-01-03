@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var formCuenta = document.getElementById('registrationFormCuenta');
   var cedulaProfesionalInput = document.getElementById("cedulaProfesional");
   var temporaryData = {}; // Almacenamiento temporal para los datos del primer formulario
+  var atrasButton = document.getElementById("atras");
 
+  if (atrasButton) {
+    atrasButton.addEventListener("click", function () {
+      window.history.back(); // Esta función de JavaScript te llevará a la página anterior en el historial del navegador.
+    });
+  }
   // Event listeners para cambiar la visibilidad de campos basados en el tipo de usuario
   if (pacienteRadio && doctorRadio) {
     pacienteRadio.addEventListener("change", function () {
