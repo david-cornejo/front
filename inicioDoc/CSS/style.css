@@ -6,14 +6,31 @@ body, html {
   
 .header {
     background-color: #c8e9f7;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Aumentar la especificidad para sobrescribir estilos predeterminados */
+.fc .fc-border-separate .fc-content,
+.fc .fc-border-separate .fc-row,
+.fc .fc-border-separate .fc-event {
+    border-color: black !important;
+}
+
+/* Cambia el color del borde de las celdas del calendario */
+.fc .fc-border-separate .fc-day-top {
+    border-color: black !important;
+}
+
+/* Cambia el color del borde de los eventos del calendario */
+.fc .fc-border-separate .fc-event .fc-content {
+    border-color: black !important;
+}
+
 .header img.logo {
-    width: 130px; /* Ajusta el tamaño del logo según tus necesidades */
+    width: 110px; /* Ajusta el tamaño del logo según tus necesidades */
 }
 
 .header h1 {
@@ -48,5 +65,6 @@ nav ul li a {
 nav ul li:hover a{
     color: #06735F;
 }
+
 
 /* Añade aquí más estilos según necesites para personalizar tu dashboard */

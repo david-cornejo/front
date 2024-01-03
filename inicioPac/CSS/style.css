@@ -6,14 +6,14 @@ body, html {
   
 .header {
     background-color: #c8e9f7;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .header img.logo {
-    width: 130px; /* Ajusta el tamaño del logo según tus necesidades */
+    width: 110px; /* Ajusta el tamaño del logo según tus necesidades */
 }
 
 .header h1 {
