@@ -18,9 +18,9 @@
             <nav>
                 <ul>                    
                     <li><a href="#">Visualizar historial</a></li>
-                    <li><a href="#">Visualizar tratamiento</a></li>
-                    <li><a href="#">Contacto Doctor</a></li>
-                    <li><a href="#">Perfil</a></li>
+                    <li><a href="visualizarTratamiento.html">Visualizar tratamiento</a></li>
+                    <li><a href="contactoDoc.html">Contacto Doctor</a></li>
+                    <li><a href="editDatos.html">Perfil</a></li>
                     <li><a href="login.html">Cerrar sesión</a></li>
                 </ul>
             </nav>
@@ -31,11 +31,11 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">Lista de citas médicas</h2>
-                    <!-- Aquí iría la lista dinámica de pacientes -->
+                    <ul id="listaCitas"></ul> <!-- Lista dinámica de citas -->
                 </div>
             </div>
         </div>
-        <div class="col-md-6" id='calendar'>
+        <div class="col-md-6 calendar custom-calendar" id='calendar'>
             <!-- Aquí iría el componente del calendario, puedes usar una librería como FullCalendar o cualquier otra -->
         </div>
     </div>

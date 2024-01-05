@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Doctor - Healthy Passport</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="contactoDoc/CSS/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 header">
+                <img src="img/logo.png" alt="Healthy Passport Logo" class="logo">
+                <h1>Datos de contacto Doctor</h1>
+                <nav>
+                    <ul>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+                <div class="col-md-4 d-flex flex-column justify-content-center registration-card">
+                    <div class="card-body">
+                        <form id="editAccountForm">
+                            <div class="contacto-info">
+                                <h3 id="nombreDoctor"></h3>
+                                <p id="cedulaDoctor"></p>
+                                <div class="contacto-detalles ">
+                                    <div class="detalle">
+                                        <img src="img/phone.png" alt="Icono Teléfono">
+                                        <p id="telefonoDoctor"></p>
+                                    </div>
+                                    <div class="detalle">
+                                        <img src="img/email.png" alt="Icono Correo">
+                                        <p id="correoDoctor"></p>
+                                    </div>
+                                    <div class="detalle">
+                                        <img src="img/location.png" alt="Icono Ubicación">
+                                        <p id="ubicacionDoctor"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-secondary btn-lg btn-block" id="atras">Atrás</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="contactoDoc/JS/main.js"></script>
+</body>
+</html>
