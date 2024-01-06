@@ -55,7 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             pacientes.forEach(paciente => {
                 const elementoPaciente = document.createElement('li');
-                elementoPaciente.textContent = `${paciente.nombre} ${paciente.apellidos}`; // Modificar según los datos que quieras mostrar
+                const enlacePaciente = document.createElement('a');
+                
+                // Configurar el enlace para redirigir a la página de detalles del paciente
+                enlacePaciente.textContent = `${paciente.nombre} ${paciente.apellidos}`;
+                enlacePaciente.href = `detallesPaciente.html?id=${paciente.id}`; // Reemplaza con tu URL real
+                enlacePaciente.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevenir la navegación estándar
+                    const idPaciente = paciente.id;
+                    // Ahora puedes usar el idPaciente como necesites, por ejemplo, redirigir a la página de detalles del paciente
+                    window.location.href = `detallesPaciente.html?id=${idPaciente}`;
+                });
+                elementoPaciente.appendChild(enlacePaciente);
                 listaPacientes.appendChild(elementoPaciente);
             });
         })
