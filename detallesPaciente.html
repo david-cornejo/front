@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control de paciente - Healthy Passport</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="editDatos/CSS/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 header">
+            <img src="img/logo.png" alt="Healthy Passport Logo" class="logo">
+            <h1>Control de paciente</h1>            
+            <nav>
+                <ul>               
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                    <li><a href="inicioDoc.html">Atrás</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row align-items-start justify-content-between">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Datos del paciente</h5>
+                    <form id="editAccountForm">
+                        <div class=" form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaDeNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fechaDeNacimiento" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" class="form-control" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Tarjeta de Tratamiento -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tratamiento actual</h5>
+                    <form id="createTreatmentForm">
+                        <div class="form-group">
+                            <label for="medicamento">Medicamento:</label>
+                            <input type="text" id="medicamento" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaInicio">Fecha de Inicio:</label>
+                            <input type="date" id="fechaInicio" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaFinal">Fecha Final:</label>
+                            <input type="date" id="fechaFinal" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="enfermedad">Enfermedad:</label>
+                            <input type="text" id="enfermedad" class="form-control" disabled>
+                        </div>
+                        <div class="form-group row">                           
+                            <div class="col-md-12">
+                                <button type="button" id="editBtn" class="btn btn-primary btn-lg btn-block">Editar tratamiento</button>
+                                <button type="button" id="saveBtn" class="btn btn-primary btn-lg btn-block d-none">Guardar Cambios</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Tarjeta de Historial Médico -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Historial Médico</h5>
+                    <!-- Contenido del historial médico -->
+                    <ul>
+                        <li>Consulta 1: Fecha - Descripción</li>
+                        <li>Consulta 2: Fecha - Descripción</li>
+                        <!-- Más elementos del historial -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="detallesPaciente/JS/main.js"></script>
+</body>
+</html>

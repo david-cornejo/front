@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // Event listeners para cambiar la visibilidad de campos basados en el tipo de usuario
   if (pacienteRadio && doctorRadio) {
-    pacienteRadio.addEventListener("change", function () {
+    pacienteRadio.addEventListener("change", function () {  
       if (cedulaProfesionalGroup) {
         cedulaProfesionalGroup.classList.remove("d-none");
         cedulaProfesionalInput.placeholder = "Ingresa la Cédula Profesional de tu Médico";
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(data => {
           console.log('Success:', data);
           alert('Registro exitoso');
+          window.location.href = 'login.html'; 
           // Aquí puedes manejar la respuesta, como mostrar un mensaje de éxito
       })
       .catch((error) => {

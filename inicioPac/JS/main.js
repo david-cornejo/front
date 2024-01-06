@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // ... otras opciones de FullCalendar ...
     });
+    function convertISODateToDMY(isoDate) {
+        const date = new Date(isoDate);
+        const day = ('0' + date.getDate()).slice(-2); // Agrega un cero al inicio y toma los últimos 2 caracteres
+        const month = ('0' + (date.getMonth() + 1)).slice(-2); // Los meses en JavaScript van de 0 a 11
+        const year = date.getFullYear();
+    
+        return `${year}-${month}-${day}`;
+    }
 
     function convertirFecha(fechaISO) {
         const fecha = new Date(fechaISO);
@@ -71,5 +79,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function cargarTratamiento() {
+        fetch(`http://localhost:8090/api/usuarios/tratamiento/${idUsuario}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                // Agrega aquí otros headers necesarios, como tokens de autenticación
+            }
+        })
+        .then(response => response.json())
+        .then(tratamiento => {            
+
+            document.getElementById('medicamento').value = tratamiento.medicamento;
+
+            const fechaIformat = convertISODateToDMY(tratamiento.fechaInicio);
+            document.getElementById('fechaInicio').value = fechaIformat;
+
+            const fechaFformat = convertISODateToDMY(tratamiento.fechaFinal);
+            document.getElementById('fechaFinal').value = fechaFformat;
+
+            document.getElementById('enfermedad').value = tratamiento.enfermedad;
+        })
+        .catch(error => {
+            console.error('Error al cargar el tratamiento:', error);
+        });
+    }
+    cargarTratamiento();
     cargarCitas(); // Llamar a la función al cargar la página
 });

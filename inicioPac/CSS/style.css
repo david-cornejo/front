@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     background-color: #c8e9f7;
     font-family: 'Times New Roman', sans-serif;
-  }
+  } 
   
 .header {
     background-color: #c8e9f7;
@@ -49,4 +49,20 @@ nav ul li:hover a{
     color: #06735F;
 }
 
+    
+  label {
+    display: block;
+    color: #000000;
+    margin-bottom: .5rem;
+  }
+  
+  .form-control {
+    border-radius: 20px;
+    border: 1px solid #06735F;
+    margin-bottom: 1rem;
+  }
+  
+  .container {
+    min-height: 100vh; 
+  }
 /* Añade aquí más estilos según necesites para personalizar tu dashboard */

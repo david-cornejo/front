@@ -17,8 +17,8 @@
             <h1>Bienvenido Paciente</h1>
             <nav>
                 <ul>                    
-                    <li><a href="#">Visualizar historial</a></li>
-                    <li><a href="visualizarTratamiento.html">Visualizar tratamiento</a></li>
+                    <li><a href="visualizarHistorial.html">Visualizar historial</a></li>
+                    <!-- <li><a href="visualizarTratamiento.html">Visualizar tratamiento</a></li> -->
                     <li><a href="contactoDoc.html">Contacto Doctor</a></li>
                     <li><a href="editDatos.html">Perfil</a></li>
                     <li><a href="login.html">Cerrar sesión</a></li>
@@ -34,9 +34,35 @@
                     <ul id="listaCitas"></ul> <!-- Lista dinámica de citas -->
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Tratamiento actual</h2>
+                    <form id="createTreatmentForm">
+                        <div class="form-group">
+                            <label for="medicamento">Medicamento:</label>
+                            <input type="text" id="medicamento" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaInicio">Fecha de Inicio:</label>
+                            <input type="date" id="fechaInicio" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaFinal">Fecha Final:</label>
+                            <input type="date" id="fechaFinal" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="enfermedad">Enfermedad:</label>
+                            <input type="text" id="enfermedad" class="form-control" disabled>
+                        </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 calendar custom-calendar" id='calendar'>
-            <!-- Aquí iría el componente del calendario, puedes usar una librería como FullCalendar o cualquier otra -->
+        <div class="col-md-6 card">
+            <div class="card-body">   
+                <div class=" calendar custom-calendar" id='calendar'>
+                    <!-- Aquí iría el componente del calendario, puedes usar una librería como FullCalendar o cualquier otra -->
+                </div>
+            </div>
         </div>
     </div>
 </div>
