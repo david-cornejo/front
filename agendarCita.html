@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendar Cita - Healthy Passport</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="editDatos/CSS/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 header">
+            <img src="img/logo.png" alt="Healthy Passport Logo" class="logo">
+            <h1>Agendar Cita</h1>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+            <div class="col-md-4 d-flex flex-column justify-content-center registration-card">
+                <div class="card-body">
+                    <form id="editAccountForm">
+                        <div class="form-group">
+                            <label for="cedulaDoctor">Cédula doctor:</label>
+                            <input type="tel" id="cedulaDoctor" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Seleccione la fecha de la cita:</label>
+                            <input type="date" id="fecha" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Seleccione la hora de la cita:</label>
+                            <input type="time" id="hora" class="form-control" format="HH:mm">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                              <button type="button" class="btn btn-secondary btn-lg btn-block" id="atras">Atrás</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg btn-block" id="crearCita">Crear cita</button>
+                              </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="agendarCitaPac/JS/main.js"></script>
+</body>
+</html>

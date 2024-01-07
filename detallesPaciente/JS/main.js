@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const editBtn = document.getElementById('editBtn');
     const saveBtn = document.getElementById('saveBtn');
-    const editableInputs = document.querySelectorAll('#medicamento, #fechaInicio, #fechaFinal, #enfermedad');
+    const editableInputs = document.querySelectorAll('#medicamento, #fechaInicio, #fechaFinal, #enfermedad');    
+    const userId = getUserIdFromURL();
+    const editHistBtn = document.getElementById('editHist');
+    const saveHistBtn = document.getElementById('saveHist');
+    const descripcionHistorial = document.getElementById('descripcionHistorial');
+
     var atrasButton = document.getElementById("atras");
 
     if (atrasButton) {
@@ -22,9 +27,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const queryParams = new URLSearchParams(window.location.search);
         return queryParams.get('id'); // Asegúrate de que 'userID' coincida con el nombre del parámetro en tu URL
     }
+    
+    const linkAgendarCita = document.getElementById('linkAgendarCita');
+    if (linkAgendarCita && userId) {
+        linkAgendarCita.href = `agendarCitaDoc.html?id=${userId}`;
+    }
 
     function cargarTratamiento() {
-        const userId = getUserIdFromURL();
         fetch(`http://localhost:8090/api/usuarios/tratamiento/${userId}`, {
             method: 'GET',
             headers: {
@@ -79,6 +88,78 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    function historial() {
+        const userId = getUserIdFromURL();
+        if (!userId) {
+            console.error('No se encontró el ID del usuario');
+            return;
+        }
+    
+        fetch(`http://localhost:8090/api/usuarios/historial/${userId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                // Aquí puedes agregar headers adicionales si son necesarios, como un token de autenticación
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar el historial: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const descripcionHistorial = document.getElementById('descripcionHistorial');
+            descripcionHistorial.value = data.descripcionHistorial;
+        })
+        .catch(error => {
+            console.error('Error al cargar el historial médico:', error);
+        });
+    }
+
+    // Habilitar edición del historial médico
+    editHistBtn.addEventListener('click', function() {
+        descripcionHistorial.disabled = false;
+        editHistBtn.classList.add('d-none');
+        saveHistBtn.classList.remove('d-none');
+    });
+
+    // Guardar los cambios del historial médico
+    saveHistBtn.addEventListener('click', function() {
+        const updatedHistorial = {
+            descripcionHistorial: descripcionHistorial.value
+        };
+    
+        const userId = getUserIdFromURL();
+    
+        fetch(`http://localhost:8090/api/usuarios/${userId}/editHistorial`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedHistorial)
+        })
+        .then(response => {
+            if (!response.ok) {
+                alert('Historial actualizado correctamente');
+                descripcionHistorial.disabled = true;
+                editHistBtn.classList.remove('d-none');
+                saveHistBtn.classList.add('d-none');
+            }
+            return response.json();
+        })
+        .then(data => {
+            //alert('Historial actualizado correctamente');
+            descripcionHistorial.disabled = true;
+            editHistBtn.classList.remove('d-none');
+            saveHistBtn.classList.add('d-none');
+        })
+        .catch(error => {
+            console.error('Error en la actualización:', error);
+        });
+    });
+
+
     // Habilitar edición
     editBtn.addEventListener('click', function() {
         editableInputs.forEach(input => input.disabled = false);
@@ -123,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    historial();
     loadUserData();
     cargarTratamiento();
 });

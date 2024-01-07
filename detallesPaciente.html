@@ -16,6 +16,7 @@
             <h1>Control de paciente</h1>            
             <nav>
                 <ul>               
+                    <li><a href="agendarCitaDoc.html" id="linkAgendarCita">Agendar cita</a></li>               
                     <li><a href="login.html">Cerrar sesión</a></li>
                     <li><a href="inicioDoc.html">Atrás</a></li>
                 </ul>
@@ -85,12 +86,18 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Historial Médico</h5>
-                    <!-- Contenido del historial médico -->
-                    <ul>
-                        <li>Consulta 1: Fecha - Descripción</li>
-                        <li>Consulta 2: Fecha - Descripción</li>
-                        <!-- Más elementos del historial -->
-                    </ul>
+                    <form id="historialForm">
+                        <div class="form-group">
+                            <label for="descripcionHistorial">Descripción:</label>
+                            <textarea id="descripcionHistorial" class="form-control" disabled></textarea>
+                        </div>
+                        <div class="form-group row">                           
+                            <div class="col-md-12">
+                                <button type="button" id="editHist" class="btn btn-primary btn-lg btn-block">Editar historial</button>
+                                <button type="button" id="saveHist" class="btn btn-primary btn-lg btn-block d-none">Guardar Cambios</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
